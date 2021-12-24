@@ -1,4 +1,5 @@
 <?php
+echo "asd";
 require __DIR__ . '/vendor/autoload.php';
 
 //Reading data from spreadsheet.

@@ -38,12 +38,12 @@
             'dev_requirement' => false,
         ),
         'google/apiclient-services' => array(
-            'pretty_version' => 'v0.226.0',
-            'version' => '0.226.0.0',
+            'pretty_version' => 'v0.228.0',
+            'version' => '0.228.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../google/apiclient-services',
             'aliases' => array(),
-            'reference' => 'c67839c96bc821b202c6737c9ae1ba6fd4626653',
+            'reference' => 'ec64bbf1d6af9475bee7b1ce4fc0ed8a0a8d8889',
             'dev_requirement' => false,
         ),
         'google/auth' => array(

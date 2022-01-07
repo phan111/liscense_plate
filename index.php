@@ -8,6 +8,8 @@
     </body>
 </html>
 <?php
+ini_set("memory_limit","512M");
+echo ini_get("memory_limit");
 error_reporting(E_ALL);
 require __DIR__ . '/vendor/autoload.php';
 //Reading data from spreadsheet.
@@ -35,6 +37,4 @@ if(!empty($_GET)){
     print_r($values);
     }
 }*/
-ini_set("memory_limit","256M");
-echo ini_get("memory_limit");
 ?>

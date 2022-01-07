@@ -50,8 +50,7 @@
 			</form>
 
 		</div>
-	</div>
-	     <?php
+			     <?php
             require __DIR__ . '/vendor/autoload.php';
             //Reading data from spreadsheet.
             $client = new \Google_Client();
@@ -75,6 +74,8 @@
                 }
             }
             ?>
+	</div>
+
 
 <!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>

@@ -3,6 +3,7 @@
         <title>ค้นหาทะเบียนรถ กฟต.1</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="HandheldFriendly" content="true" />
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
         <style>
             html, body {
               font-family: 'Montserrat Alternates', sans-serif;

@@ -8,7 +8,7 @@
     </body>
 </html>
 <?php
-//error_reporting(0);
+error_reporting(E_ALL);
 require __DIR__ . '/vendor/autoload.php';
 //Reading data from spreadsheet.
 $client = new \Google_Client();

@@ -215,6 +215,17 @@
                 </div>
 
             </div>
+            <?php
+            if(!empty($_GET)){
+                foreach($values AS $key){
+                    //print_r($key[7]);
+                    //print_r(strpos($key[7], $search));
+                    if(strpos($key[7], $_GET['search']) !== FALSE && strpos($key[10], "ไม่") === FALSE){
+                        echo $key[2]." (".$key[7].") <a href='tel:".$key[3]."'><i class='fa fa-phone'></i></a><hr>";
+                    }
+                }
+            }
+            ?>
         </main>
         
         <script>
@@ -259,14 +270,5 @@ $get_range = "A1:K";
 $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
 $values = $response->getValues();
 
-echo "<pre>";
-if(!empty($_GET)){
-    foreach($values AS $key){
-        //print_r($key[7]);
-        //print_r(strpos($key[7], $search));
-        if(strpos($key[7], $_GET['search']) !== FALSE && strpos($key[10], "ไม่") === FALSE){
-            echo $key[2]." (".$key[7].") <a href='tel:".$key[3]."'><i class='fa fa-phone'></i></a><hr>";
-        }
-    }
-}
+
 ?>

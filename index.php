@@ -26,12 +26,13 @@ $values = $response->getValues();
 echo "<pre>";
 if(!empty($_GET)){
     echo "GET";
-    foreach($values AS $key){
+    /*foreach($values AS $key){
         //print_r($key[7]);
         //print_r(strpos($key[7], $search));
         if(strpos($key[7], $_GET['search']) !== FALSE && strpos($key[10], "ไม่") === FALSE){
             print_r($key);
-        }
+        }*/
+    print_r($values);
     }
 }
 ?>

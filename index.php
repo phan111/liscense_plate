@@ -57,7 +57,6 @@
             }
 
         </style>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
 
@@ -67,32 +66,7 @@
           <i class="fab fa-searchengin"></i>
           </a>
         </div>
-            <?php
-            require __DIR__ . '/vendor/autoload.php';
-            //Reading data from spreadsheet.
-            $client = new \Google_Client();
-            $client->setApplicationName('Google Sheets and PHP');
-            $client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
-            $client->setAccessType('offline');
-            $client->setAuthConfig(__DIR__ . '/credentials.json');
-            $service = new Google_Service_Sheets($client);
-            $spreadsheetId = "18YfUWVh4UWmD_xbNOy1FaT-mlnjjzgo8ov-dfeIsCWE"; //It is present in your URL
-            $get_range = "A1:K";
-            //Request to get data from spreadsheet.
-            $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
-            $values = $response->getValues();
-            if(!empty($_GET)){
-                foreach($values AS $key){
-                    //print_r($key[7]);
-                    //print_r(strpos($key[7], $search));
-                    if(strpos($key[7], $_GET['search']) !== FALSE && strpos($key[10], "ไม่") === FALSE){
-                        echo "<center style='padding-top:10px;font-size:25px'><b>".$key[2]."<br>(".$key[7].") <a href='tel:".$key[3]."'><i class='fa fa-phone fa-2x' style='color:#83FF33;padding-left15px'></i></a><hr style='margin-top:10px'></b></center>";
-                    }
-                }
-            }
-            ?>
 
-        
     </body>
 
 </html>

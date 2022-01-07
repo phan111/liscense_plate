@@ -1,9 +1,67 @@
 <html>
-    <head></head>
+    <head>
+        <title>ค้นหาทะเบียนรถ กฟต.1</title>
+        <style>
+            body{
+              background:#7D26CD;
+              .search-box{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform:translate(-50%,-50%);
+                background: #ccc;
+                height: 40px;
+                border-radius:40px;
+                padding: 10px;
+                &:hover{
+                  .s-box{
+                    width: 240px;
+                    padding: 0 6px;
+                  }
+                  .s-btn{
+                    background:#fff;
+                  }
+                }
+                .s-btn{
+                  color: #7D26CD;
+                  float:right;
+                  width: 40px;
+                  height: 40px;
+                  transition:.4s;
+                  border-radius:50%;
+                  background: #ccc;
+                  display:flex;
+                  justify-content:center;
+                  align-items:center;
+                  i{
+                    font-size:20px;
+                  }
+                }
+                .s-box{
+                  border: none;
+                  background:none;
+                  outline:none;
+                  float:left;
+                  padding: 0;
+                  color:#7D26CD;
+                  font-size:16px;
+                  transition:.5s;
+                  line-height:40px;
+                  width: 0px;
+                }
+              }
+            }
+
+        </style>
+    </head>
     <body>
         <form action="#" method="get">
-            <input type="text" name="search">
-            <input type="submit" value="ค้นหา">
+            <div class="search-box">
+                <input type="text" class="s-box" name="search" placeholder="ทะเบียนรถ">
+                  <a class="s-btn" href="">
+                    <i class="fab fa-searchengin"></i>
+                  </a>
+            </div>
         </form>
     </body>
 </html>

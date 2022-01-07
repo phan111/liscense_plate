@@ -1,88 +1,86 @@
 <html>
     <head>
         <title>ค้นหาทะเบียนรถ กฟต.1</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <style>
-            /*** COLORS ***/
-            @bg-color: #913D88;
-            @txt-color: #FFFFFF;
-            @icn-color: #FFFFFF;
+            @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+            @import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
 
-            /*** DEMO ***/
-            html,body{height:100%;margin:0;}body{background:@bg-color;font:13px monospace;color:@txt-color}p{margin-top:30px}.cntr{display:table;width:100%;height:100%;.cntr-innr{display:table-cell;text-align:center;vertical-align:middle}}
-
-            /*** STYLES ***/
-            .search {
-                display: inline-block;
-                position: relative;
-                height: 35px;
-                width: 35px;
-                box-sizing: border-box;
-                margin: 0px 8px 7px 0px;
-                padding: 7px 9px 0px 9px;
-                border: 3px solid @icn-color;
-                border-radius: 25px;
-                transition: all 200ms ease;
-                cursor: text;
-
-                &:after {
-                    content: "";
-                    position: absolute;
-                    width: 3px;
-                    height: 20px;
-                    right: -5px;
-                    top: 21px;
-                    background: @icn-color;
-                    border-radius: 3px;
-                    transform: rotate(-45deg);
-                    transition: all 200ms ease;
-                }
-
-                &.active,
-                &:hover {
-                    width: 200px;
-                    margin-right: 0px;
-
-                    &:after {
-                        height: 0px;	
-                    }
-                }
-
-                input {
-                    width: 100%;
-                    border: none;
-                    box-sizing: border-box;
-                    font-family: Helvetica;
-                    font-size: 15px;
-                    color: inherit;
-                    background: transparent;
-                    outline-width: 0px;
-                }
+            body {
+                background: #DDD;
+                font-size: 15px;
+            }
+            #wrap {
+              margin: 50px 100px;
+              display: inline-block;
+              position: relative;
+              height: 60px;
+              float: right;
+              padding: 0;
+              position: relative;
             }
 
+            input[type="text"] {
+              height: 60px;
+              font-size: 55px;
+              display: inline-block;
+              font-family: "Lato";
+              font-weight: 100;
+              border: none;
+              outline: none;
+              color: #555;
+              padding: 3px;
+              padding-right: 60px;
+              width: 0px;
+              position: absolute;
+              top: 0;
+              right: 0;
+              background: none;
+              z-index: 3;
+              transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
+              cursor: pointer;
+            }
+
+            input[type="text"]:focus:hover {
+              border-bottom: 1px solid #BBB;
+            }
+
+            input[type="text"]:focus {
+              width: 700px;
+              z-index: 1;
+              border-bottom: 1px solid #BBB;
+              cursor: text;
+            }
+            input[type="submit"] {
+              height: 67px;
+              width: 63px;
+              display: inline-block;
+              color:red;
+              float: right;
+              background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRFU1NT9fX1lJSUXl5e1dXVfn5+c3Nz6urqv7+/tLS0iYmJqampn5+fysrK39/faWlp////Vi4ZywAAABF0Uk5T/////////////////////wAlrZliAAABLklEQVR42rSWWRbDIAhFHeOUtN3/ags1zaA4cHrKZ8JFRHwoXkwTvwGP1Qo0bYObAPwiLmbNAHBWFBZlD9j0JxflDViIObNHG/Do8PRHTJk0TezAhv7qloK0JJEBh+F8+U/hopIELOWfiZUCDOZD1RADOQKA75oq4cvVkcT+OdHnqqpQCITWAjnWVgGQUWz12lJuGwGoaWgBKzRVBcCypgUkOAoWgBX/L0CmxN40u6xwcIJ1cOzWYDffp3axsQOyvdkXiH9FKRFwPRHYZUaXMgPLeiW7QhbDRciyLXJaKheCuLbiVoqx1DVRyH26yb0hsuoOFEPsoz+BVE0MRlZNjGZcRQyHYkmMp2hBTIzdkzCTc/pLqOnBrk7/yZdAOq/q5NPBH1f7x7fGP4C3AAMAQrhzX9zhcGsAAAAASUVORK5CYII=) center center no-repeat;
+              text-indent: -10000px;
+              border: none;
+              position: absolute;
+              top: 0;
+              right: 0;
+              z-index: 2;
+              cursor: pointer;
+              opacity: 0.4;
+              cursor: pointer;
+              transition: opacity .4s ease;
+            }
+
+            input[type="submit"]:hover {
+              opacity: 0.8;
+            }
         </style>
     </head>
     <body>
         
-        <div class="cntr">
-            <div class="cntr-innr">
-              <label class="search" for="inpt_search">
-                    <input id="inpt_search" type="text" />
-                </label>
-                <p>Hover to see the magic.</p>
-            </div>
+        <div id="wrap">
+          <form action="" autocomplete="on">
+          <input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">
+          </form>
         </div>
-        
-        <script>
-            $("#inpt_search").on('focus', function () {
-                $(this).parent('label').addClass('active');
-            });
-
-            $("#inpt_search").on('blur', function () {
-                if($(this).val().length == 0)
-                    $(this).parent('label').removeClass('active');
-            });
-        </script>
         
     </body>
 </html>

@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>ค้นหาทะเบียนรถ กฟต.1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <style>
             @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
             @import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);

@@ -107,7 +107,7 @@ if(!empty($_GET)){
         //print_r($key[7]);
         //print_r(strpos($key[7], $search));
         if(strpos($key[7], $_GET['search']) !== FALSE && strpos($key[10], "ไม่") === FALSE){
-            print_r($key);
+            echo $key[2]."<a href='call:".$key['3']."'>".$key['3']."</a><br>";
         }
     }
 }

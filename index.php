@@ -11,6 +11,7 @@
               width: 100%;
               max-width: 100%;
               height: auto;
+              min-height: 100%;
               padding: 0;
               margin: 0;
             }
@@ -40,6 +41,7 @@
               padding: 0 26px;
               width: 100%;
               height: auto;
+              min-height: 100%;
               background: rgba(154,57,163,1);
               background: -moz-linear-gradient(-45deg, rgba(154,57,163,1) 0%, rgba(65,103,168,1) 100%);
               background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(154,57,163,1)), color-stop(100%, rgba(65,103,168,1)));

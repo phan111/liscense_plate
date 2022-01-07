@@ -23,7 +23,7 @@ $get_range = "A1:K";
 $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
 $values = $response->getValues();
 
-echo "<pre>";
+/*echo "<pre>";
 if(!empty($_GET)){
     echo "GET";
     /*foreach($values AS $key){
@@ -34,5 +34,7 @@ if(!empty($_GET)){
         }*/
     print_r($values);
     }
-}
+}*/
+ini_set("memory_limit","256M");
+echo ini_get("memory_limit");
 ?>

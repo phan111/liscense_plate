@@ -56,14 +56,14 @@
         </style>
     </head>
     <body>
-        <form action="#" method="get">
-            <div class="search-box">
-                <input type="text" class="s-box" name="search" placeholder="ทะเบียนรถ">
-                  <a class="s-btn" href="">
-                    <i class="fab fa-searchengin"></i>
-                  </a>
-            </div>
-        </form>
+
+        <div class="search-box">
+          <input class="s-box" type="text" name="search" placeholder="Type keyword">
+          <a class="s-btn" href="">
+          <i class="fab fa-searchengin"></i>
+          </a>
+        </div>
+        
     </body>
 </html>
 <?php

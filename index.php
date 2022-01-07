@@ -230,7 +230,6 @@
             $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
             $values = $response->getValues();
             if(!empty($_GET)){
-                var_dump($_GET);
                 foreach($values AS $key){
                     //print_r($key[7]);
                     //print_r(strpos($key[7], $search));

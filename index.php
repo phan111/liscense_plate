@@ -1,9 +1,3 @@
-<?php
-echo phpversion();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-?>
 <html>
     <head></head>
     <body>
@@ -29,7 +23,6 @@ $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
 $values = $response->getValues();
 
 echo "<pre>";
-print_r($values);
 if(!empty($_GET)){
     foreach($values AS $key){
         //print_r($key[7]);

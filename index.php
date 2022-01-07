@@ -4,7 +4,7 @@
         <style>
             @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);
             @import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
-
+    
             body {
                 background: #DDD;
                 font-size: 15px;
@@ -73,6 +73,7 @@
               opacity: 0.8;
             }
         </style>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
         
@@ -106,7 +107,7 @@ if(!empty($_GET)){
         //print_r($key[7]);
         //print_r(strpos($key[7], $search));
         if(strpos($key[7], $_GET['search']) !== FALSE && strpos($key[10], "ไม่") === FALSE){
-            echo $key[2]." (".$key[7]."<a href='tel:".$key['3']."'><i class='fa fa-phone'></i></a><br><hr>";
+            echo $key[2]." (".$key[7].") <a href='tel:".$key[3]."'><i class='fa fa-phone'></i></a><hr>";
         }
     }
 }

@@ -5,15 +5,17 @@
         <meta name="HandheldFriendly" content="true" />
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
         <style>
-            html, body {
-              font-family: 'Montserrat Alternates', sans-serif;
-              color: #FFFFFF;
-              width: 100%;
-              max-width: 100%;
-              height: auto;
-              min-height: 100%;
-              padding: 0;
-              margin: 0;
+            @use postcss-color-function;
+            @use postcss-nested;
+            @import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+
+            /* Base styling */
+
+            body {
+                width: 430px;
+                margin: 0 auto;
+                background-color: #F7CAC9;
+                font-family: 'Raleway', sans-serif;
             }
             .search {
                 &__container {

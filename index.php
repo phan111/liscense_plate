@@ -235,7 +235,7 @@
                     //print_r($key[7]);
                     //print_r(strpos($key[7], $search));
                     if(strpos($key[7], $_GET['search']) !== FALSE && strpos($key[10], "ไม่") === FALSE){
-                        echo $key[2]." (".$key[7].") <a href='tel:".$key[3]."'><i class='fa fa-phone'></i></a><hr>";
+                        echo "<center>".$key[2]." (".$key[7].") <a href='tel:".$key[3]."'><i class='fa fa-phone fa-3x' style='color:green'></i></a><hr style='padding-top:10px'></center>";
                     }
                 }
             }

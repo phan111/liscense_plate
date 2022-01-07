@@ -3,66 +3,86 @@
         <title>ค้นหาทะเบียนรถ กฟต.1</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <style>
-            body{
-              background:#7D26CD;
-              .search-box{
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform:translate(-50%,-50%);
-                background: #ccc;
-                height: 40px;
-                border-radius:40px;
-                padding: 10px;
-                &:hover{
-                  .s-box{
-                    width: 240px;
-                    padding: 0 6px;
-                  }
-                  .s-btn{
-                    background:#fff;
-                  }
+            /*** COLORS ***/
+            @bg-color: #913D88;
+            @txt-color: #FFFFFF;
+            @icn-color: #FFFFFF;
+
+            /*** DEMO ***/
+            html,body{height:100%;margin:0;}body{background:@bg-color;font:13px monospace;color:@txt-color}p{margin-top:30px}.cntr{display:table;width:100%;height:100%;.cntr-innr{display:table-cell;text-align:center;vertical-align:middle}}
+
+            /*** STYLES ***/
+            .search {
+                display: inline-block;
+                position: relative;
+                height: 35px;
+                width: 35px;
+                box-sizing: border-box;
+                margin: 0px 8px 7px 0px;
+                padding: 7px 9px 0px 9px;
+                border: 3px solid @icn-color;
+                border-radius: 25px;
+                transition: all 200ms ease;
+                cursor: text;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    width: 3px;
+                    height: 20px;
+                    right: -5px;
+                    top: 21px;
+                    background: @icn-color;
+                    border-radius: 3px;
+                    transform: rotate(-45deg);
+                    transition: all 200ms ease;
                 }
-                .s-btn{
-                  color: #7D26CD;
-                  float:right;
-                  width: 40px;
-                  height: 40px;
-                  transition:.4s;
-                  border-radius:50%;
-                  background: #ccc;
-                  display:flex;
-                  justify-content:center;
-                  align-items:center;
-                  i{
-                    font-size:20px;
-                  }
+
+                &.active,
+                &:hover {
+                    width: 200px;
+                    margin-right: 0px;
+
+                    &:after {
+                        height: 0px;	
+                    }
                 }
-                .s-box{
-                  border: none;
-                  background:none;
-                  outline:none;
-                  float:left;
-                  padding: 0;
-                  color:#7D26CD;
-                  font-size:16px;
-                  transition:.5s;
-                  line-height:40px;
-                  width: 0px;
+
+                input {
+                    width: 100%;
+                    border: none;
+                    box-sizing: border-box;
+                    font-family: Helvetica;
+                    font-size: 15px;
+                    color: inherit;
+                    background: transparent;
+                    outline-width: 0px;
                 }
-              }
             }
 
         </style>
     </head>
     <body>
-
-        <div class="search-box">
-          <input class="s-box" type="text" name="search" placeholder="Type keyword">
-          <a class="s-btn" href="">
-          <i class="fab fa-searchengin"></i>
-          </a>
+        
+        <div class="cntr">
+            <div class="cntr-innr">
+              <label class="search" for="inpt_search">
+                    <input id="inpt_search" type="text" />
+                </label>
+                <p>Hover to see the magic.</p>
+            </div>
         </div>
+        
+        <script>
+            $("#inpt_search").on('focus', function () {
+                $(this).parent('label').addClass('active');
+            });
+
+            $("#inpt_search").on('blur', function () {
+                if($(this).val().length == 0)
+                    $(this).parent('label').removeClass('active');
+            });
+        </script>
         
     </body>
 </html>

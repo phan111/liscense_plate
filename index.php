@@ -5,66 +5,127 @@
         <meta name="HandheldFriendly" content="true" />
         <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
         <style>
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-            body{
-              background:#7D26CD;
-              .search-box{
+            *
+            {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                box-sizing: border-box;
+            }
+            body
+            {
+                margin: 100px;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #fff;
+            }
+            #click{ display: none; }
+            .main
+            {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .main label
+            {
                 position: absolute;
-                top: 50%;
-                left: 50%;
-                transform:translate(-50%,-50%);
-                background: #ccc;
-                height: 40px;
-                border-radius:40px;
-                padding: 10px;
-                &:hover{
-                  .s-box{
-                    width: 240px;
-                    padding: 0 6px;
-                  }
-                  .s-btn{
-                    background:#fff;
-                  }
-                }
-                .s-btn{
-                  color: #7D26CD;
-                  float:right;
-                  width: 40px;
-                  height: 40px;
-                  transition:.4s;
-                  border-radius:50%;
-                  background: #ccc;
-                  display:flex;
-                  justify-content:center;
-                  align-items:center;
-                  i{
-                    font-size:20px;
-                  }
-                }
-                .s-box{
-                  border: none;
-                  background:none;
-                  outline:none;
-                  float:left;
-                  padding: 0;
-                  color:#7D26CD;
-                  font-size:16px;
-                  transition:.5s;
-                  line-height:40px;
-                  width: 0px;
-                }
-              }
+                background-color: rgb(30, 166, 245);
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .6s;
+            }
+            span:nth-child(1)
+            {
+                display: flex;
+                position: absolute;
+                top: 11px;
+                left: 11px;
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                border: 4px solid #fff;
+                transition: .4s;
+            }
+            span:nth-child(2), span:nth-child(3)
+            {
+                display: flex;
+                position: absolute;
+                top: 31px;
+                left: 26px;
+                width: 12px;
+                height: 4px;
+                border-radius: 3px;
+                background: #fff;
+                transform: rotate(45deg);
+                transition: .5s;
+            }
+            .main #search
+            {
+                position:absolute;
+                height: 50px;
+                width: 50px;
+                font-size: 22px;
+                padding: 0 20px;
+                background: #fff;
+                border-radius: 50px;
+                color: rgb(22, 123, 182);
+                transition: .6s;
+            }
+            #click:checked ~ .main #search 
+            {
+
+                width: 300px; 
+            }
+            #click:checked ~ .main label 
+            {
+
+                margin-left: 125px;
+            }
+            #click:checked ~ .main span:nth-child(1)
+            {
+
+                opacity: 0; 
+            }
+            #click:checked ~ .main span:nth-child(2), 
+            #click:checked ~ .main span:nth-child(3)
+            {
+
+                top: 22px;
+                left: 15px;
+                width: 20px;
+                height: 5px;
+            }
+            #click:checked ~ .main #search 
+            {
+
+                box-shadow: 0 0 40px rgb(90, 217, 255);
+            }
+            #click:checked ~ .main span:nth-child(3)
+            {
+
+                transform: rotate(-45deg);
             }
 
         </style>
     </head>
     <body>
 
-        <div class="search-box">
-          <input class="s-box" type="text" name="search" placeholder="Type keyword">
-          <a class="s-btn" href="">
-          <i class="fab fa-searchengin"></i>
-          </a>
+        <input id="click" type="checkbox">
+        <div class="main">
+          <input type="text" id="search">
+          <label for="click">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
         </div>
 
     </body>

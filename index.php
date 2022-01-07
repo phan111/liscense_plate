@@ -1,36 +1,133 @@
 <html>
-    <head></head>
-    <body>
-        <form action="#" method="get">
-            <input type="text" name="search">
-            <input type="submit" value="ค้นหา">
-        </form>
-    </body>
-</html>
-<?php
-//error_reporting(0);
-require __DIR__ . '/vendor/autoload.php';
-//Reading data from spreadsheet.
-$client = new \Google_Client();
-$client->setApplicationName('Google Sheets and PHP');
-$client->setScopes([\Google_Service_Sheets::SPREADSHEETS]);
-$client->setAccessType('offline');
-$client->setAuthConfig(__DIR__ . '/credentials.json');
-$service = new Google_Service_Sheets($client);
-$spreadsheetId = "18YfUWVh4UWmD_xbNOy1FaT-mlnjjzgo8ov-dfeIsCWE"; //It is present in your URL
-$get_range = "A1:K";
-//Request to get data from spreadsheet.
-$response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
-$values = $response->getValues();
+    <head>
+        <title>ค้นหาทะเบียนรถ กฟต.1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="HandheldFriendly" content="true" />
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <style>
+            *
+            {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                box-sizing: border-box;
+            }
+            body
+            {
+                margin: 100px;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #fff;
+            }
+            #click{ display: none; }
+            .main
+            {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .main label
+            {
+                position: absolute;
+                background-color: rgb(30, 166, 245);
+                height: 50px;
+                width: 50px;
+                line-height: 50px;
+                text-align: center;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: .6s;
+            }
+            span:nth-child(1)
+            {
+                display: flex;
+                position: absolute;
+                top: 11px;
+                left: 11px;
+                width: 22px;
+                height: 22px;
+                border-radius: 50%;
+                border: 4px solid #fff;
+                transition: .4s;
+            }
+            span:nth-child(2), span:nth-child(3)
+            {
+                display: flex;
+                position: absolute;
+                top: 31px;
+                left: 26px;
+                width: 12px;
+                height: 4px;
+                border-radius: 3px;
+                background: #fff;
+                transform: rotate(45deg);
+                transition: .5s;
+            }
+            .main #search
+            {
+                position:absolute;
+                height: 50px;
+                width: 50px;
+                font-size: 22px;
+                padding: 0 20px;
+                background: #fff;
+                border-radius: 50px;
+                color: rgb(22, 123, 182);
+                transition: .6s;
+            }
+            #click:checked ~ .main #search 
+            {
 
-echo "<pre>";
-if(!empty($_GET)){
-    foreach($values AS $key){
-        //print_r($key[7]);
-        //print_r(strpos($key[7], $search));
-        if(strpos($key[7], $_GET['search']) !== FALSE && strpos($key[10], "ไม่") === FALSE){
-            print_r($key);
-        }
-    }
-}
-?>
+                width: 300px; 
+            }
+            #click:checked ~ .main label 
+            {
+
+                margin-left: 125px;
+            }
+            #click:checked ~ .main span:nth-child(1)
+            {
+
+                opacity: 0; 
+            }
+            #click:checked ~ .main span:nth-child(2), 
+            #click:checked ~ .main span:nth-child(3)
+            {
+
+                top: 22px;
+                left: 15px;
+                width: 20px;
+                height: 5px;
+            }
+            #click:checked ~ .main #search 
+            {
+
+                box-shadow: 0 0 40px rgb(90, 217, 255);
+            }
+            #click:checked ~ .main span:nth-child(3)
+            {
+
+                transform: rotate(-45deg);
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <input id="click" type="checkbox">
+        <div class="main">
+          <input type="text" id="search">
+          <label for="click">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+
+    </body>
+
+</html>

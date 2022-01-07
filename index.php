@@ -17,6 +17,7 @@
                 background-color: #F7CAC9;
                 font-family: 'Raleway', sans-serif;
             }
+
             .search {
                 &__container {
                     padding-top: 64px;
@@ -92,13 +93,11 @@
                     }
                 }
             }
-            /*****************************************************************************************************************/
-            
         </style>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     </head>
     <body>
-      <div class="search__container">
+        <div class="search__container">
             <p class="search__title">
                 Go ahead, hover over search
             </p>

@@ -48,9 +48,7 @@
 					<input type="submit" class="contact100-form-btn" value="ค้นหา">
 				</div>
 			</form>
-
-		</div>
-			     <?php
+	<?php
             require __DIR__ . '/vendor/autoload.php';
             //Reading data from spreadsheet.
             $client = new \Google_Client();
@@ -74,6 +72,9 @@
                 }
             }
             ?>
+
+		</div>
+
 	</div>
 
 

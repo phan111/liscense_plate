@@ -66,12 +66,11 @@
 							}
 							echo "<center style='padding-top:10px;font-size:25px'><b>".$key[2]."<br>(".$key[7].")<br>" .$department."<br>เบอร์ภายใน:".$key[5]."<hr style='margin-top:10px'></b></center>";
 						}
-
                     }else{
 						if($count == 0){
 							echo  "<center><b>ไม่พบข้อมูล</b></center>";
+							$count++;
 						}
-						$count++;
 					}
                 }
             }

@@ -70,6 +70,7 @@
 						}
 					}
 				}else{
+					print_r($values);
 					echo "<center>ไม่พบข้อมูล</center>";
 				}
             }

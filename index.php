@@ -49,7 +49,7 @@
             $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
             $values = $response->getValues();
             if(!empty($_GET)){
-				if(isset($values)){
+				if(isset($values) || !empty($values)){
 					foreach($values AS $key){
 						//print_r($key[7]);
 						//print_r(strpos($key[7], $search));

@@ -70,7 +70,7 @@
                     }
                 }
 				if($found == 0){
-					echo "<center><b>ไม่พบข้อมูล</b></center>";
+					echo "<center><b style='color:red'>ไม่พบข้อมูล</b></center>";
 				}
             }
             ?>

@@ -70,8 +70,7 @@
 						}
                     }
                 }
-				echo "count:$count ----- amount:$amount";
-				if($count == $amount){
+				if($count == 0){
 					echo "<center><b>ไม่พบอมูล</b></center>";
 				}
             }

@@ -48,8 +48,7 @@
             //Request to get data from spreadsheet.
             $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
             $values = $response->getValues();
-			$amount = count($values);
-			$count = 0;
+			$found = 0;
             if(!empty($_GET)){
                 foreach($values AS $key){
                     //print_r($key[7]);
@@ -70,7 +69,7 @@
 						}
                     }
                 }
-				if($count == 0){
+				if($found == 0){
 					echo "<center><b>ไม่พบอมูล</b></center>";
 				}
             }

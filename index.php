@@ -70,7 +70,7 @@
                     }
                 }
 				if($found == 0){
-					echo "<center><b>ไม่พบอมูล</b></center>";
+					echo "<center><b>ไม่พบข้อมูล</b></center>";
 				}
             }
             ?>

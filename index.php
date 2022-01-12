@@ -49,11 +49,11 @@
             $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
             $values = $response->getValues();
             if(!empty($_GET)){
-				print_r($values);
                 foreach($values AS $key){
                     //print_r($key[7]);
                     //print_r(strpos($key[7], $search));
-                    if(strpos($key[7], $_GET['search'])){
+						print_r($key);
+						if(strpos($key[7], $_GET['search'])){
 						if(strpos($key[10], "ไม่") === FALSE){
                         	echo "<center style='padding-top:10px;font-size:25px'><b>".$key[2]."<br>(".$key[7].") <a href='tel:".$key[3]."'><i class='fa fa-phone fa-2x' style='color:#83FF33;padding-left15px'></i></a><hr style='margin-top:10px'></b></center>";
 						}else{

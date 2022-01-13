@@ -46,7 +46,7 @@
 			$client->setAuthConfig(__DIR__ . '/credentials.json');
 			$service = new Google_Service_Sheets($client);
 			$spreadsheetId = "18YfUWVh4UWmD_xbNOy1FaT-mlnjjzgo8ov-dfeIsCWE"; //It is present in your URL
-			$get_range = "C2:K";
+			$get_range = "B2:K";
 			//Request to get data from spreadsheet.
 			$response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
 			$values = $response->getValues();

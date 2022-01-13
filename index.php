@@ -44,12 +44,13 @@
             $client->setAuthConfig(__DIR__ . '/credentials.json');
             $service = new Google_Service_Sheets($client);
             $spreadsheetId = "18YfUWVh4UWmD_xbNOy1FaT-mlnjjzgo8ov-dfeIsCWE"; //It is present in your URL
-            $get_range = "A1:K";
+            $get_range = "B2:B,D2:D,F2:F,H2:H,K2:K";
             //Request to get data from spreadsheet.
             $response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
             $values = $response->getValues();
+			echo "<pre>"; print_r($values);
 			$found = 0;
-            if(!empty($_GET)){
+            /*if(!empty($_GET)){
                 foreach($values AS $key){
                     //print_r($key[7]);
                     //print_r(strpos($key[7], $search));
@@ -72,7 +73,7 @@
 				if($found == 0){
 					echo "<center><b style='color:red'>ไม่พบข้อมูล</b></center>";
 				}
-            }
+            }*/
             ?>
 
 		</div>

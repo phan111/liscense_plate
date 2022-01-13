@@ -51,22 +51,21 @@
 			$response = $service->spreadsheets_values->get($spreadsheetId, $get_range);
 			$values = $response->getValues();
 			$found = 0;
-			echo "<pre>";print_r($values);
 			if (!empty($_GET)) {
 				foreach ($values as $key) {
-					if (strpos($key[7], $_GET['search'])) {
+					if (strpos($key[6], $_GET['search'])) {
 						$found++;
-						if (strpos($key[10], "ไม่") === FALSE) {
-							echo "<center style='padding-top:10px;font-size:25px'><b>" . $key[2] . "<br>(" . $key[7] . ") <a href='tel:" . $key[3] . "'><i class='fa fa-phone fa-2x' style='color:#83FF33;padding-left15px'></i></a><hr style='margin-top:10px'></b></center>";
+						if (strpos($key[9], "ไม่") === FALSE) {
+							echo "<center style='padding-top:10px;font-size:25px'><b>" . $key[1] . "<br>(" . $key[6] . ") <a href='tel:" . $key[2] . "'><i class='fa fa-phone fa-2x' style='color:#83FF33;padding-left15px'></i></a><hr style='margin-top:10px'></b></center>";
 						} else {
 							$get_range = "emp!A2:F";
 							$emp_sheet = $service->spreadsheets_values->get($spreadsheetId, $get_range);
 							foreach ($emp_sheet->getValues() as $emp) {
-								if ($emp[0] == $key[1]) {
+								if ($emp[0] == $key[0]) {
 									$department = $emp[5];
 								}
 							}
-							echo "<center style='padding-top:10px;font-size:25px'><b>" . $key[2] . "<br>(" . $key[7] . ")<br>" . $department . "<br>เบอร์ภายใน:" . $key[5] . "<hr style='margin-top:10px'></b></center>";
+							echo "<center style='padding-top:10px;font-size:25px'><b>" . $key[1] . "<br>(" . $key[6] . ")<br>" . $department . "<br>เบอร์ภายใน:" . $key[4] . "<hr style='margin-top:10px'></b></center>";
 						}
 					}
 				}
